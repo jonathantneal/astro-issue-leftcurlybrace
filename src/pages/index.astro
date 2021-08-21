@@ -1,0 +1,23 @@
+---
+import { readFile } from 'node:fs/promises'
+import { Markdown } from 'astro/components';
+
+const buffer = await readFile('./src/docs/index.md')
+const content = buffer.toString()
+---
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Astro</title>
+</head>
+
+<body>
+	<h1>
+		Astro
+	</h1>
+	<Markdown content={content} />
+</body>
+
+</html>
